@@ -24,6 +24,10 @@
                               <button type="submit" class="waves-effect waves-light btn" ng-attr-id="{{button.name}}" ng-click="situation()" ng-value="button.stat" name="{{button.name}}">{{button.label}}</button>
                               <p>{{button.name}}</p>                                                  
                           </div>
+                          <div class="col s12 m6 l4 m-y" ng-repeat="layer in layers"> 
+                              <input type="text" ng-model="{{layer.stat}}" ng-readonly="!layer.editorEnabled"/>
+                              <p>{{layer.name}}</p>                                                  
+                          </div>
                        </form>
                   </div>
                 </div>
@@ -90,6 +94,26 @@
                     }
                 }
                 console.log(estadoLayer); // Array populada, verificação no console.
+                
+                var = layer = [];
+                for(i = 0; i < estadoLayer.length; i++){
+                        layer[i] = {name: "L"+(i+1), stat: sessionStorage.getItem("L"+ (i+1))};
+                }
+                $scope.layers = layer;
+                console.log($scope.layers); // Layers, verificação no console
+                
+                
+                //RANGES
+                
+                var estadoRange = [];
+                for(i = 0; i < sessionStorage.length; i++){
+                    if(sessionStorage.getItem("L"+(i+1)) !== null){
+                        estadoRange[i] = sessionStorage.getItem("L"+ (i+1)) //Sem quebra de linha
+                    }else if(sessionStorage.getItem("\nL"+(i+1)) !== null){
+                        estadoRange[i] = sessionStorage.getItem("\nL"+ (i+1)) //Com quebra de linha
+                    }
+                }
+                console.log(estadoRange); // Array populada, verificação no console.
                 
             });       
 
