@@ -80,7 +80,7 @@
             
                 //O problema estava no "file_get_contents" que pois, provavelmente o servidor desativou o acesso a arquivos atraves de url.
                 //Foi substituido então pelo "my_file_get_contents" utilizando a função acima.
-                $url = my_file_get_contents('');
+                $url = my_file_get_contents('https://testeautomacaohtml.herokuapp.com/index.html');
                 $result = preg_replace("/\<p\>(.*?)\<\/p\>/i", "\\1", $url);
                 
                 echo "$result";
@@ -91,7 +91,7 @@
             var dados = document.getElementById("storage").innerHTML.trim().split("*");
             console.log(dados);
             
-            var estado = []; 
+            var estado = [];
             for(i = 0; i < dados.length; i++){
                 estado[i] = dados[i].split("=");
                 sessionStorage.setItem(estado[i][0], estado[i][1]);
