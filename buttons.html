@@ -25,7 +25,7 @@
                               <p>{{button.name}}</p>                                                  
                           </div>
                           <div class="col s12 m6 l4 m-y" ng-repeat="layer in layers"> 
-                              <input type="text" ng-model="{{layer.stat}}" ng-readonly="!layer.editorEnabled"/>
+                              <input type="text" ng-value="layer.stat" ng-readonly="!layer.editorEnabled"/>
                               <p>{{layer.name}}</p>                                                  
                           </div>
                        </form>
