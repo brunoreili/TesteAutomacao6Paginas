@@ -37,22 +37,26 @@
             var app = angular.module('myApp', []);
             app.controller('myCtrl', function($scope) {               
                 
-                //Esse bloco popula o array "estado" com os dados vindo do sessionStorage
+            
+                //BOTÕES
+                
+                //Esse bloco popula o array "estado do Botao" com os dados vindo do sessionStorage
                 //Aqui, fiz uma verificação apenas porque as informações estão vindo com quebra de linha mas a primeira vem sem.
-                var estado = [];                    
+                
+                var estadoBotao = [];                    
                 for(i = 0; i < sessionStorage.length; i++){
                     if(sessionStorage.getItem("B"+(i+1)) !== null){
-                        estado[i] = sessionStorage.getItem("B"+ (i+1)) //Sem quebra de linha (primeira)
+                        estadoBotao[i] = sessionStorage.getItem("B"+ (i+1)) //Sem quebra de linha (primeira)
                     }else if(sessionStorage.getItem("\nB"+(i+1)) !== null){
-                        estado[i] = sessionStorage.getItem("\nB"+ (i+1)) //Com quebra de linha (demais)
+                        estadoBotao[i] = sessionStorage.getItem("\nB"+ (i+1)) //Com quebra de linha (demais)
                     }
                 }
-                console.log(estado); // Array populada, verificação no console.
+                console.log(estadoBotao); // Array populada, verificação no console.
                 
-                //Esse bloco serve para criar os botões de acordo com as informações do array "estado"
+                //Esse bloco serve para criar os botões de acordo com as informações do array "estado do Botao"
                 var botao = [];               
-                for(i = 0; i < estado.length; i++){
-                    if(estado[i] === "0"){
+                for(i = 0; i < estadoBotao.length; i++){
+                    if(estadoBotao[i] === "0"){
                         botao[i] = {name: "B"+(i+1), stat: 0, label: "Desligado"};
                     }else{
                         botao[i] = {name: "B"+(i+1), stat: 1, label: "Ligado"};
@@ -73,6 +77,20 @@
                         console.log($scope.buttons[vrau]); //Verificação no console
                     }
                 };
+                
+                
+                //LAYERS
+                
+                var estadoLayer = [];
+                for(i = 0; i < sessionStorage.length; i++){
+                    if(sessionStorage.getItem("L"+(i+1)) !== null){
+                        estadoLayer[i] = sessionStorage.getItem("L"+ (i+1)) //Sem quebra de linha
+                    }else if(sessionStorage.getItem("\nL"+(i+1)) !== null){
+                        estadoLayer[i] = sessionStorage.getItem("\nL"+ (i+1)) //Com quebra de linha
+                    }
+                }
+                console.log(estadoLayer); // Array populada, verificação no console.
+                
             });       
 
         </script>
