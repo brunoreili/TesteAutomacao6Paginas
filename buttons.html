@@ -25,7 +25,7 @@
                               <p>{{button.name}}</p>                                                  
                           </div>
                           <div class="col s12 m6 l4 m-y" ng-repeat="layer in layers"> 
-                              <input type="text" ng-model="{{layer.stat}}" ng-readonly="!layer.editorEnabled"/>
+                              <input type="text" ng-model="layer.stat" ng-readonly="!layer.editorEnabled"/>
                               <p>{{layer.name}}</p>                                                  
                           </div>
                        </form>
@@ -97,7 +97,7 @@
                 
                 var = layer = [];
                 for(i = 0; i < estadoLayer.length; i++){
-                        layer[i] = {name: "L"+(i+1), stat: sessionStorage.getItem("L"+ (i+1))};
+                        layer[i] = {name: "L"+(i+1), stat: estadoLayer[i]};
                 }
                 $scope.layers = layer;
                 console.log($scope.layers); // Layers, verificação no console
