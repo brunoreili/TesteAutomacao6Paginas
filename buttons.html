@@ -25,7 +25,7 @@
                               <p>{{button.name}}</p>                                                  
                           </div>
                           <div class="col s12 m6 l4 m-y" ng-repeat="layer in layers"> 
-                              <input type="text" ng-readonly="!layer.editorEnabled"/>
+                              <input type="text" ng-model="{{layer.stat}}" ng-readonly="!layer.editorEnabled"/>
                               <p>{{layer.name}}</p>                                                  
                           </div>
                        </form>
@@ -107,10 +107,10 @@
                 
                 var estadoRange = [];
                 for(i = 0; i < sessionStorage.length; i++){
-                    if(sessionStorage.getItem("L"+(i+1)) !== null){
-                        estadoRange[i] = sessionStorage.getItem("L"+ (i+1)) //Sem quebra de linha
+                    if(sessionStorage.getItem("R"+(i+1)) !== null){
+                        estadoRange[i] = sessionStorage.getItem("R"+ (i+1)) //Sem quebra de linha
                     }else if(sessionStorage.getItem("\nL"+(i+1)) !== null){
-                        estadoRange[i] = sessionStorage.getItem("\nL"+ (i+1)) //Com quebra de linha
+                        estadoRange[i] = sessionStorage.getItem("\nR"+ (i+1)) //Com quebra de linha
                     }
                 }
                 console.log(estadoRange); // Array populada, verificação no console.
