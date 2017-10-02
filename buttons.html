@@ -24,6 +24,7 @@
                               <button type="submit" class="waves-effect waves-light btn" ng-attr-id="{{button.name}}" ng-click="situation()" ng-value="button.stat" name="{{button.name}}">{{button.label}}</button>
                               <p>{{button.name}}</p>                                                  
                           </div>
+                          
                        </form>
                   </div>
                 </div>
@@ -90,6 +91,13 @@
                     }
                 }
                 console.log(estadoLayer); // Array populada, verificação no console.
+                
+                var layer = [];
+                for(i = 0; i < estadoLayer.length; i++){
+                        layer[i] = {name: "L"+(i+1), stat: estadoLayer[i]};
+                }
+                $scope.layers = layer;
+                console.log($scope.layers); // Layers, verificação no console
                 
                 
                 //RANGES
