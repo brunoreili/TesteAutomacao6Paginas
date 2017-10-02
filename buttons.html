@@ -43,7 +43,7 @@
                 for(i = 0; i < sessionStorage.length; i++){
                     if(sessionStorage.getItem("B"+(i+1)) !== null){
                         estado[i] = sessionStorage.getItem("B"+ (i+1)) //Sem quebra de linha (primeira)
-                    }else{
+                    }else if(sessionStorage.getItem("\nB"+(i+1)) !== null){
                         estado[i] = sessionStorage.getItem("\nB"+ (i+1)) //Com quebra de linha (demais)
                     }
                 }
@@ -61,16 +61,6 @@
                 $scope.buttons = botao;
                 console.log($scope.buttons); // Botões, verificação no console
                 
-                //CÓDIGO ESTÁTICO (ANTERIOR)
-                /* $scope.buttons = [{name:"B1", stat:"d", label:"Desligado"},
-                 *                   {name:"B2", stat:"d", label:"Desligado"},
-                 *                   {name:"B3", stat:"d", label:"Desligado"},
-                 *                   {name:"B4", stat:"d", label:"Desligado"},
-                 *                   {name:"B5", stat:"d", label:"Desligado"},
-                 *                   {name:"B6", stat:"d", label:"Desligado"},];
-                 */
-                
-
                 $scope.situation= function(){
                     var vrau = this.$index;
                     if($scope.buttons[vrau].stat == 0){
