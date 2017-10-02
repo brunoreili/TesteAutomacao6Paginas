@@ -24,10 +24,6 @@
                               <button type="submit" class="waves-effect waves-light btn" ng-attr-id="{{button.name}}" ng-click="situation()" ng-value="button.stat" name="{{button.name}}">{{button.label}}</button>
                               <p>{{button.name}}</p>                                                  
                           </div>
-                          <div class="col s12 m6 l4 m-y" ng-repeat="layer in layers"> 
-                              <input type="text" ng-readonly="!layer.editorEnabled"/>
-                              <p>{{layer.name}}</p>                                                  
-                          </div>
                        </form>
                   </div>
                 </div>
