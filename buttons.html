@@ -30,7 +30,6 @@
                           </div>
                           <div class="col s12 m6 l4 m-y" ng-repeat="range in ranges"> 
                               <input type="range" id="range" ng-value="range.stat" min="0" max="10" ng-click="movimentation()"/>
-                              <button ng-click="movimentation()">Clicaaa</button>
                               <p>{{range.name}}</p>                                                  
                           </div>
                        </form>
@@ -131,6 +130,9 @@
                 console.log($scope.ranges); // Ranges, verificação no console
                                 
                 $scope.movimentation = function(){
+                    var mov = this.$index;
+                        $scope.ranges[mov].stat = document.getElementById("range").value;
+                        console.log($scope.ranges[mov]); //Verificação no console                 
                     console.log(document.getElementById("range").value);    
                 };
                 
