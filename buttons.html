@@ -28,6 +28,10 @@
                               <input type="text" ng-value="layer.stat" ng-readonly="!layer.editorEnabled"/>
                               <p>{{layer.name}}</p>                                                  
                           </div>
+                          <div class="col s12 m6 l4 m-y" ng-repeat="range in rangers"> 
+                              <input type="range" ng-value="range.stat" min="0" max="10"/>
+                              <p>{{range.name}}</p>                                                  
+                          </div>
                        </form>
                   </div>
                 </div>
@@ -114,6 +118,13 @@
                     }
                 }
                 console.log(estadoRange); // Array populada, verificação no console.
+                
+                var range = [];
+                for(i = 0; i < estadoRange.length; i++){
+                        range[i] = {name: "R"+(i+1), stat: estadoRange[i]};
+                }
+                $scope.rangers = range;
+                console.log($scope.rangers); // Rangers, verificação no console
                 
             });       
 
