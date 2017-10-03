@@ -28,8 +28,8 @@
                               <input type="text" ng-value="layer.stat" ng-readonly="!layer.editorEnabled"/>
                               <p>{{layer.name}}</p>                                                  
                           </div>
-                          <div class="col s12 m6 l4 m-y" ng-repeat="range in rangers"> 
-                              <input type="range" ng-value="range.stat" min="0" max="10"/>
+                          <div class="col s12 m6 l4 m-y" ng-repeat="range in ranges"> 
+                              <input type="range"/>
                               <p>{{range.name}}</p>                                                  
                           </div>
                        </form>
@@ -54,9 +54,9 @@
                 var estadoBotao = [];                    
                 for(i = 0; i < sessionStorage.length; i++){
                     if(sessionStorage.getItem("B"+(i+1)) !== null){
-                        estadoBotao[i] = sessionStorage.getItem("B"+ (i+1)) //Sem quebra de linha (primeira)
+                        estadoBotao[i] = sessionStorage.getItem("B"+(i+1)) //Sem quebra de linha (primeira)
                     }else if(sessionStorage.getItem("\nB"+(i+1)) !== null){
-                        estadoBotao[i] = sessionStorage.getItem("\nB"+ (i+1)) //Com quebra de linha (demais)
+                        estadoBotao[i] = sessionStorage.getItem("\nB"+(i+1)) //Com quebra de linha (demais)
                     }
                 }
                 console.log(estadoBotao); // Array populada, verificação no console.
@@ -92,9 +92,9 @@
                 var estadoLayer = [];
                 for(i = 0; i < sessionStorage.length; i++){
                     if(sessionStorage.getItem("L"+(i+1)) !== null){
-                        estadoLayer[i] = sessionStorage.getItem("L"+ (i+1)) //Sem quebra de linha
+                        estadoLayer[i] = sessionStorage.getItem("L"+(i+1)) //Sem quebra de linha
                     }else if(sessionStorage.getItem("\nL"+(i+1)) !== null){
-                        estadoLayer[i] = sessionStorage.getItem("\nL"+ (i+1)) //Com quebra de linha
+                        estadoLayer[i] = sessionStorage.getItem("\nL"+(i+1)) //Com quebra de linha
                     }
                 }
                 console.log(estadoLayer); // Array populada, verificação no console.
@@ -112,9 +112,9 @@
                 var estadoRange = [];
                 for(i = 0; i < sessionStorage.length; i++){
                     if(sessionStorage.getItem("R"+(i+1)) !== null){
-                        estadoRange[i] = sessionStorage.getItem("R"+ (i+1)) //Sem quebra de linha
+                        estadoRange[i] = sessionStorage.getItem("R"+(i+1)) //Sem quebra de linha
                     }else if(sessionStorage.getItem("\nR"+(i+1)) !== null){
-                        estadoRange[i] = sessionStorage.getItem("\nR"+ (i+1)) //Com quebra de linha
+                        estadoRange[i] = sessionStorage.getItem("\nR"+(i+1)) //Com quebra de linha
                     }
                 }
                 console.log(estadoRange); // Array populada, verificação no console.
@@ -123,8 +123,8 @@
                 for(i = 0; i < estadoRange.length; i++){
                         range[i] = {name: "R"+(i+1), stat: estadoRange[i]};
                 }
-                $scope.rangers = range;
-                console.log($scope.rangers); // Rangers, verificação no console
+                $scope.ranges = range;
+                console.log($scope.ranges); // Ranges, verificação no console
                 
             });       
 
