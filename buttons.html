@@ -113,7 +113,7 @@
                 for(i = 0; i < sessionStorage.length; i++){
                     if(sessionStorage.getItem("R"+(i+1)) !== null){
                         estadoRange[i] = sessionStorage.getItem("R"+ (i+1)) //Sem quebra de linha
-                    }else if(sessionStorage.getItem("\nL"+(i+1)) !== null){
+                    }else if(sessionStorage.getItem("\nR"+(i+1)) !== null){
                         estadoRange[i] = sessionStorage.getItem("\nR"+ (i+1)) //Com quebra de linha
                     }
                 }
