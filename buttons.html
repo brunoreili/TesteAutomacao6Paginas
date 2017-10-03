@@ -29,7 +29,7 @@
                               <p>{{layer.name}}</p>                                                  
                           </div>
                           <div class="col s12 m6 l4 m-y" ng-repeat="range in ranges"> 
-                              <input type="range" ng-value="range.stat" min="0" max="10"/>
+                              <input type="range" id="range" ng-value="range.stat" min="0" max="10" ng-click="movimentation()"/>
                               <p>{{range.name}}</p>                                                  
                           </div>
                        </form>
@@ -125,6 +125,22 @@
                 }
                 $scope.ranges = range;
                 console.log($scope.ranges); // Ranges, verificação no console
+                console.log(document.getElementById("myRange").value);
+                
+                /*$scope.movimentation = function(){
+                    var mov = this.$index;
+                    
+                    
+                    if($scope.ranges[vrau].stat == 0){
+                        $scope.buttons[vrau].label = "Ligado";
+                        $scope.buttons[vrau].stat = 1;
+                        console.log($scope.buttons[vrau]); //Verificação no console
+                    }else{
+                        $scope.buttons[vrau].label = "Desligado";
+                        $scope.buttons[vrau].stat = 0;
+                        console.log($scope.buttons[vrau]); //Verificação no console
+                    }
+                };*/
                 
             });       
 
