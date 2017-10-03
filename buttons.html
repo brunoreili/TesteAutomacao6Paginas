@@ -29,8 +29,8 @@
                               <p>{{layer.name}}</p>                                                  
                           </div>
                           <div class="col s12 m6 l4 m-y" ng-repeat="range in ranges"> 
-                              <input type="range" id="range"  ng-value="range.stat" min="0" max="10" ng-click="movimentation()"/>
-                              <button type="submit" ng-attr-id="{{range.name}}" ng-click="movimentation()" ng-value="range.stat" name="{{range.name}}">Enviar</button>
+                              <input type="range" id="range" name="{{range.name}}" ng-submit="range.stat" ng-value="range.stat" min="0" max="10" ng-click="movimentation()"/>
+                              
                               <p>{{range.name}}</p>                                                  
                           </div>
                        </form>
