@@ -21,7 +21,7 @@
                       <h5 class="m-y">Controle</h5>
                       <form action="http://oneserver.dlinkddns.com/" method="get" target="blank">
                           <div class="col s12 m6 l4 m-y" ng-repeat="button in buttons"> 
-                              <button type="submit" class="waves-effect waves-light btn" ng-attr-id="{{button.name}}" ng-click="situation()" ng-value="button.stat" name="{{button.name}}">{{button.label}}</button>
+                              <button type="submit" class="waves-effect waves-light btn"  ng-click="situation()" ng-value="button.stat" name="{{button.name}}">{{button.label}}</button>
                               <p>{{button.name}}</p>                                                  
                           </div>
                           <div class="col s12 m6 l4 m-y" ng-repeat="layer in layers"> 
@@ -88,27 +88,6 @@
                 };
                 
                 
-                //LAYERS
-                console.log("LAYERS");
-                
-                var estadoLayer = [];
-                for(i = 0; i < sessionStorage.length; i++){
-                    if(sessionStorage.getItem("L"+(i+1)) !== null){
-                        estadoLayer[i] = sessionStorage.getItem("L"+(i+1)) //Sem quebra de linha
-                    }else if(sessionStorage.getItem("\nL"+(i+1)) !== null){
-                        estadoLayer[i] = sessionStorage.getItem("\nL"+(i+1)) //Com quebra de linha
-                    }
-                }
-                console.log(estadoLayer); // Array populada, verificação no console.
-                
-                var layer = [];
-                for(i = 0; i < estadoLayer.length; i++){
-                        layer[i] = {name: "L"+(i+1), stat: estadoLayer[i] + "ºC"};
-                }
-                $scope.layers = layer;
-                console.log($scope.layers); // Layers, verificação no console
-                
-                
                 //RANGES
                 console.log("RANGES");
                 
@@ -135,6 +114,27 @@
                         console.log($scope.ranges[mov]); //Verificação no console                 
                     console.log(document.getElementById("range").value);    
                 };
+                
+                
+                //LAYERS
+                console.log("LAYERS");
+                
+                var estadoLayer = [];
+                for(i = 0; i < sessionStorage.length; i++){
+                    if(sessionStorage.getItem("L"+(i+1)) !== null){
+                        estadoLayer[i] = sessionStorage.getItem("L"+(i+1)) //Sem quebra de linha
+                    }else if(sessionStorage.getItem("\nL"+(i+1)) !== null){
+                        estadoLayer[i] = sessionStorage.getItem("\nL"+(i+1)) //Com quebra de linha
+                    }
+                }
+                console.log(estadoLayer); // Array populada, verificação no console.
+                
+                var layer = [];
+                for(i = 0; i < estadoLayer.length; i++){
+                        layer[i] = {name: "L"+(i+1), stat: estadoLayer[i] + "ºC"};
+                }
+                $scope.layers = layer;
+                console.log($scope.layers); // Layers, verificação no console
                 
             });       
 
