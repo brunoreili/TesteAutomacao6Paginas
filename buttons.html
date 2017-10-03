@@ -125,13 +125,14 @@
                 }
                 $scope.ranges = range;
                 console.log($scope.ranges); // Ranges, verificação no console
-                console.log(document.getElementById("myRange").value);
+                console.log(document.getElementById("range").value);
                 
-                /*$scope.movimentation = function(){
+                $scope.movimentation = function(){
                     var mov = this.$index;
+                    console.log(document.getElementById("range").value);
                     
                     
-                    if($scope.ranges[vrau].stat == 0){
+                    /*if($scope.ranges[vrau].stat == 0){
                         $scope.buttons[vrau].label = "Ligado";
                         $scope.buttons[vrau].stat = 1;
                         console.log($scope.buttons[vrau]); //Verificação no console
@@ -139,8 +140,8 @@
                         $scope.buttons[vrau].label = "Desligado";
                         $scope.buttons[vrau].stat = 0;
                         console.log($scope.buttons[vrau]); //Verificação no console
-                    }
-                };*/
+                    }*/
+                };
                 
             });       
 
