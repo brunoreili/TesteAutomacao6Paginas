@@ -30,8 +30,15 @@
                           </div>
                           <div class="col s12 m6 l4 m-y" ng-repeat="range in ranges"> 
                               <input type="range" id="range" ng-value="range.stat" min="0" max="10"/>
-                              <button onclick="movimentation()">Clicaaa!</button>
-                              <p>{{range.name}}</p>                                                  
+                              <button onclick="myFunction()">Clicaaa!</button>
+                              <p>{{range.name}}</p>
+                              <script>
+                                    function myFunction() {
+                                    var x = document.getElementById("range").value;
+                                    document.getElementById("demo").innerHTML = x;
+                                    console.log(document.getElementById("range).value);
+                                    }
+                              </script>
                           </div>
                        </form>
                   </div>
