@@ -92,7 +92,7 @@
             console.log(dados);
             
             var estado = [];
-            for(i = 0; i < dados.length; i++){
+            for(i = 0; i < dados.length; i++){ 
                 estado[i] = dados[i].split("=");
                 sessionStorage.setItem(estado[i][0], estado[i][1]);
             }
